@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--t00: 1rem;
+	--t01: 0.75rem;
+}
+
+/* MOBILE */
+@media not screen and (max-width: 700px) and (max-height: 500px) {
+	:root {
+		--t30: 2.6rem;
+		--t20: 1.8rem;
+		--t10: 1.6rem;
+	}
+	.hide {
+		@apply !hidden;
+	}
+}
+
+/* TABLET */
+@media screen and (min-width: 700px) and (min-height: 500px) {
+	:root {
+		--t30: 4rem;
+		--t20: 3rem;
+		--t10: 1.75rem;
+	}
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1781px) and (min-height: 500px) {
+	:root {
+		--t30: 6rem;
+		--t20: 3.5rem;
+		--t10: 2.25rem;
+	}
+}
+
+.theme-dark {
+	--bg: black;
+	--sa: hsla(0, 0%, 50%, 0.25);
+	--ma: hsla(0, 0%, 70%, 0.3);
+	--fg: white;
+	--active: rgb(31, 31, 152);
+}
+
+.theme-light {
+	--bg: hsl(300, 0%, 98%);
+	--sa: hsla(300, 50%, 50%, 0.1);
+	--ma: hsla(300, 70%, 47%, 0.2);
+	--fg: black;
+	--active: rgb(300, 123, 250);
+}
+
+body {
+	@apply h-full bg-bg text-fg;
+}
+
+h1 {
+	@apply text-30;
+}
+
+h2 {
+	@apply text-20;
+}
+
+h3 {
+	@apply text-10;
+}
+
+.header {
+	font-weight: bold;
+	letter-spacing: -0.04em;
+}
+
+/* BUTTON */
+.btn {
+	@apply bg-ma rounded px py-02 cursor-pointer transition-colors;
+}
+
+.btn:disabled {
+	opacity: 0.5;
+}
+
+.btn:hover {
+	@apply contrast-[400%];
+}
+
+.btn:active {
+	@apply contrast-[30%];
+}
+
+.btn.big {
+	@apply px-10 py;
+}
+
+.btn.primary {
+	@apply bg-active;
+}
